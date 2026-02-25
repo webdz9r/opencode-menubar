@@ -13,7 +13,7 @@ opencode-menubar is a native macOS menubar application that manages the `opencod
 - **Build system:** Makefile with `swiftc` — no Xcode project required
 - **Target:** macOS 13.0+ (arm64)
 - **Bundle ID:** `com.opencode.taskbar`
-- **Code signing:** Developer ID Application certificate (Chris Larson, Team ID `9JCZHUAUEH`)
+- **Code signing:** Developer ID Application certificate (see Makefile for identity)
 - **Distribution:** Signed and notarized via GitHub Actions; also installable from source
 
 ## Architecture
@@ -110,11 +110,7 @@ The build compiles all `Sources/*.swift` files together with `swiftc`, then asse
 
 ### Local signing
 
-The Makefile contains the signing identity and team ID:
-```makefile
-SIGNING_IDENTITY = Developer ID Application: Chris Larson (9JCZHUAUEH)
-TEAM_ID = 9JCZHUAUEH
-```
+The Makefile contains the signing identity and team ID as `SIGNING_IDENTITY` and `TEAM_ID` variables. These match the Developer ID Application certificate installed in the maintainer's Keychain.
 
 For local `make install` (signed + notarized), you need:
 1. The Developer ID Application certificate installed in your Keychain
@@ -139,7 +135,7 @@ GitHub Actions handles signing and notarization automatically on tag push. The w
 |--------|---------|
 | `DEVELOPER_ID_CERT_BASE64` | Base64-encoded `.p12` certificate export |
 | `DEVELOPER_ID_CERT_PASSWORD` | Password for the `.p12` file |
-| `APPLE_TEAM_ID` | `9JCZHUAUEH` |
+| `APPLE_TEAM_ID` | Apple Developer Team ID |
 | `NOTARY_KEY_ID` | App Store Connect API Key ID |
 | `NOTARY_ISSUER_ID` | App Store Connect API Issuer ID |
 | `NOTARY_KEY_BASE64` | Base64-encoded `.p8` API key |
