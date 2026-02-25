@@ -1,10 +1,12 @@
 # opencode-menubar
 
-A native macOS menubar app to start and stop the [opencode](https://github.com/sst/opencode) web server with mDNS discovery.
+A native macOS menubar app to start and stop the [opencode](https://github.com/anomalyco/opencode) web server with mDNS discovery.
 
 Lives in your menubar. No dock icon. No window. Click to start, click to stop.
 
 ![macOS](https://img.shields.io/badge/macOS-13.0%2B-blue) ![Swift](https://img.shields.io/badge/Swift-5-orange) ![Architecture](https://img.shields.io/badge/arch-arm64-lightgrey) [![Build](https://github.com/webdz9r/opencode-menubar/actions/workflows/build.yml/badge.svg)](https://github.com/webdz9r/opencode-menubar/actions/workflows/build.yml)
+
+> **Disclaimer:** This project is not built by, maintained by, or affiliated with the [OpenCode](https://opencode.ai) team. It is an independent community project that integrates with the `opencode` CLI tool.
 
 ## Download
 
@@ -33,10 +35,29 @@ The icon is a circle with "OC" rendered inside it. The colors adapt based on ser
 | **Stopped** | Black circle, white text | White circle, black text |
 | **Running** | Black circle, green text | White circle, green text |
 
+## About OpenCode
+
+[OpenCode](https://opencode.ai) is an open-source CLI tool for coding with LLMs from the terminal. This menubar app manages the `opencode web --mdns` server, which provides browser access and mDNS discovery for OpenCode.
+
+Install OpenCode using one of these methods:
+
+```bash
+# Homebrew
+brew install anomalyco/tap/opencode
+
+# npm
+npm install -g opencode
+
+# Shell script
+curl -fsSL https://opencode.ai/install | bash
+```
+
+For more information, see the [OpenCode repository](https://github.com/anomalyco/opencode) and [opencode.ai](https://opencode.ai).
+
 ## Requirements
 
 - macOS 13.0 or later (Apple Silicon)
-- [opencode](https://github.com/sst/opencode) installed via Homebrew or available in `/usr/local/bin`
+- [opencode](https://github.com/anomalyco/opencode) installed via one of the methods above
 
 ### Build from source (additional requirements)
 
