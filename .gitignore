@@ -1,0 +1,10 @@
+build/
+.DS_Store
+*.swp
+*~
+
+# Secrets — never commit these
+.env
+*.p12
+*.p8
+*.certSigningRequest

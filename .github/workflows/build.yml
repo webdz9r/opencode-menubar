@@ -1,0 +1,24 @@
+name: Build
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: make build
+
+      - name: Verify bundle
+        run: |
+          test -d build/OpenCodeMenuBar.app
+          file build/OpenCodeMenuBar.app/Contents/MacOS/OpenCodeMenuBar | grep -q "Mach-O"
+          codesign --verify build/OpenCodeMenuBar.app
+          echo "Build verified successfully"
