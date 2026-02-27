@@ -76,6 +76,10 @@ class ServerManager {
         }
         proc.environment = env
 
+        // Start in /tmp so the server doesn't trigger macOS TCC
+        // permission prompts for protected directories
+        proc.currentDirectoryURL = URL(fileURLWithPath: "/tmp")
+
         // Capture output for debugging
         let pipe = Pipe()
         proc.standardOutput = pipe

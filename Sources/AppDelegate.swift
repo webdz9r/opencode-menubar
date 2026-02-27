@@ -2,7 +2,7 @@ import Cocoa
 import ServiceManagement
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    static let appVersion = "1.0.0"
+    static let appVersion = "1.0.1"
     static let releasesURL = "https://github.com/webdz9r/opencode-menubar/releases"
 
     private var statusItem: NSStatusItem!
