@@ -8,6 +8,8 @@ Lives in your menubar. No dock icon. No window. Click to start, click to stop.
 
 > **Disclaimer:** This project is not built by, maintained by, or affiliated with the [OpenCode](https://opencode.ai) team. It is an independent community project that integrates with the `opencode` CLI tool.
 
+![Screenshot](screenshot.png)
+
 ## Download
 
 **Pre-built, signed, and notarized** — download the latest release:
